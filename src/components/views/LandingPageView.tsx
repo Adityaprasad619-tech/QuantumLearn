@@ -310,7 +310,7 @@ export const LandingPageView: React.FC<LandingPageViewProps> = ({
               alignItems: 'center',
               gap: '8px'
             }}>
-              <AlertCircle size={16} flexShrink={0} />
+              <AlertCircle size={16} style={{ flexShrink: 0 }} />
               <span>{error}</span>
             </div>
           )}
@@ -328,7 +328,7 @@ export const LandingPageView: React.FC<LandingPageViewProps> = ({
               alignItems: 'center',
               gap: '8px'
             }}>
-              <CheckCircle2 size={16} flexShrink={0} />
+              <CheckCircle2 size={16} style={{ flexShrink: 0 }} />
               <span>{successMsg}</span>
             </div>
           )}

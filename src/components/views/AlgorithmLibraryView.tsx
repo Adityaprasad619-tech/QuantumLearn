@@ -397,7 +397,7 @@ const CircuitVisualizer: React.FC<CircuitVisualizerProps> = ({ algo, activeStep 
             )}
 
             {/* Gate box / circle */}
-            {gate.type === 'CX' || gate.type === 'CNOT' ? (
+            {gate.type === 'CX' ? (
               // Target of CX: circle with ⊕
               <g>
                 <circle cx={x} cy={getQubitY(target)} r={14}
@@ -542,7 +542,7 @@ export const AlgorithmLibraryView: React.FC<AlgorithmLibraryViewProps> = ({ onAs
   const [activeStep, setActiveStep] = useState(-1);
   const [isPlaying, setIsPlaying] = useState(false);
   const [activePanel, setActivePanel] = useState<'visual' | 'code'>('visual');
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const maxStep = selectedAlgo.gates.reduce((m, g) => Math.max(m, g.stepIndex ?? 0), 0);
 
