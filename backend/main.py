@@ -69,6 +69,16 @@ def health_check():
     except Exception as exc:
         raise HTTPException(status_code=503, detail="Database connection unavailable") from exc
 
+
+@app.get("/")
+def root():
+    return {
+        "name": "QuantumLearn API",
+        "status": "online",
+        "health": "/health",
+        "docs": "/docs"
+    }
+
 # -----------------------------------------------------------------------------
 # Pydantic Request & Response Schemas
 # -----------------------------------------------------------------------------
